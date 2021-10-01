@@ -15,6 +15,7 @@ Models:
 - Cast
     - name
     - rolename
+    - movie_id
 - User
     - name
     - email
