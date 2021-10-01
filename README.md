@@ -1,6 +1,6 @@
 # Programmer Test Nodejs
 
-Build a Movie Shop System using Nodejs
+Build a Movie Shop System using Nodejs & Mysql
 
 Fork this repo and pull request to main branch as end result
 
