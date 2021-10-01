@@ -1,7 +1,9 @@
-# programmer-test-nodejs
-
+# Programmer Test Nodejs
 
 Build a Movie Shop System using Nodejs
+
+Clone this repo and push to main branch as end result
+
 Requirements of the system:
 
 Models:
