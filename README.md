@@ -21,3 +21,7 @@ $ yarn run dev
 
 - Current MYSQL database is using personal remote SQL service.
 - It's pre-config under `.env`.
+
+## Postman
+
+Import from <a id="raw-url" href="https://raw.githubusercontent.com/rf-infinite/programmer-test-nodejs/main/pcari.postman_collection.json">Postman collection</a> 
