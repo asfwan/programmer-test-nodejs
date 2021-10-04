@@ -1,0 +1,901 @@
+{
+	"info": {
+		"_postman_id": "721c6f76-b6d2-4336-87cb-d588f32633af",
+		"name": "pcari",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Laravel",
+			"item": [
+				{
+					"name": "token - get",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "PcariComponentToken",
+								"value": "Pcari$ecretTok3n!!",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost/api/token",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "token - topup",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "PcariComponentToken",
+								"value": "Pcari$ecretTok3n!!",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"amount\": 18.00,\n    \"type\": \"Debit\",\n    \"description\": \"testing\",\n    \"balance\": \"40\",\n    \"user_id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost/api/token/topup",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"token",
+								"topup"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Express",
+			"item": [
+				{
+					"name": "movie",
+					"item": [
+						{
+							"name": "movie - find all",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "ABC",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:7000/v1/movie/findAll",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "7000",
+									"path": [
+										"v1",
+										"movie",
+										"findAll"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "movie - find",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "ABC",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Movie A\",\n    \"description\": \"Description B\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:7000/v1/movie/find",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "7000",
+									"path": [
+										"v1",
+										"movie",
+										"find"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "movie - update",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "ABC",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"movie_id\": 5,\n    \"title\": \"Movie ABCD\",\n    \"director\": \"Director ABCD\",\n    \"description\": \"Description ABCD\",\n    \"duration_min\": 90\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:7000/v1/movie/update",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "7000",
+									"path": [
+										"v1",
+										"movie",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "movie - delete",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "ABC",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"movie_id\": 99\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:7000/v1/movie/delete",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "7000",
+									"path": [
+										"v1",
+										"movie",
+										"delete"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "movie - create",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "ABC",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"Movie ABCDE\",\n    \"director\": \"Director ABCDEE\",\n    \"description\": \"Description ABCDE\",\n    \"duration_min\": 100\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:7000/v1/movie/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "7000",
+									"path": [
+										"v1",
+										"movie",
+										"create"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "cast",
+					"item": [
+						{
+							"name": "cast - find all",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "Token",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:7000/v1/cast/findAll",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "7000",
+									"path": [
+										"v1",
+										"cast",
+										"findAll"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "cast - find",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "ABC",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Actor A\",\n    \"rolename\": \"Role B\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:7000/v1/cast/find",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "7000",
+									"path": [
+										"v1",
+										"cast",
+										"find"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "cast - update",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "ABC",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": 4,\n    \"name\": \"Actor D\",\n    \"rolename\": \"Role DD\",\n    \"movie_id\": 2\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:7000/v1/cast/update",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "7000",
+									"path": [
+										"v1",
+										"cast",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "cast - delete",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "ABC",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": 8\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:7000/v1/cast/delete",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "7000",
+									"path": [
+										"v1",
+										"cast",
+										"delete"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "cast - create",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "ABC",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Actor ABCD\",\n    \"rolename\": \"Role ABCD\",\n    \"movie_id\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:7000/v1/cast/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "7000",
+									"path": [
+										"v1",
+										"cast",
+										"create"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "user",
+					"item": [
+						{
+							"name": "user - find all",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "Token",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:7000/v1/user/findAll",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "7000",
+									"path": [
+										"v1",
+										"user",
+										"findAll"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "user - find",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "Token",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"User A\",\n    \"email\": \"a@email.com\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:7000/v1/user/find",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "7000",
+									"path": [
+										"v1",
+										"user",
+										"find"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "user - update",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "Token",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n   \"user_id\": 1,\n   \"name\": \"User AA\",\n   \"email\": \"aa@email.com\",\n   \"password\": \"password12\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:7000/v1/user/update",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "7000",
+									"path": [
+										"v1",
+										"user",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "user - delete",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "Token",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_id\": 3\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:7000/v1/user/delete",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "7000",
+									"path": [
+										"v1",
+										"user",
+										"delete"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "user - create",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "Token",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n   \"name\": \"User C\",\n   \"email\": \"c@email.com\",\n   \"password\": \"password1\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:7000/v1/user/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "7000",
+									"path": [
+										"v1",
+										"user",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "user - login",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "Token",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n   \"name\": \"User AA\",\n   \"email\": \"aa@email.com\",\n   \"password\": \"password12\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:7000/v1/user/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "7000",
+									"path": [
+										"v1",
+										"user",
+										"login"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "wishlist",
+					"item": [
+						{
+							"name": "wishlist - find all",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "ABC",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:7000/v1/wishlist/findAll",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "7000",
+									"path": [
+										"v1",
+										"wishlist",
+										"findAll"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "wishlit - find",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "ABC",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"movie_id\": 1,\n    \"user_id\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:7000/v1/wishlist/find",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "7000",
+									"path": [
+										"v1",
+										"wishlist",
+										"find"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "wishlist - update",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "ABC",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"wishlist_id\": 1,\n    \"movie_id\": 5,\n    \"user_id\": 2\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:7000/v1/wishlist/update",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "7000",
+									"path": [
+										"v1",
+										"wishlist",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "wishlist - delete",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "ABC",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"wishlist_id\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:7000/v1/wishlist/delete",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "7000",
+									"path": [
+										"v1",
+										"wishlist",
+										"delete"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "wishlist - create",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "ABC",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"movie_id\": 1,\n    \"user_id\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:7000/v1/wishlist/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "7000",
+									"path": [
+										"v1",
+										"wishlist",
+										"create"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}

@@ -1,47 +1,27 @@
-# Programmer Test Nodejs
+<p align="center"><a href="#" target="_blank"><img src="https://github.com/rf-infinite/express-ts/blob/master/icon.png?raw=true" width="150"></a></p>
 
-Build a Movie Shop System using Nodejs & Mysql
+## About This Express
 
-Fork this repo and pull request to main branch as end result
+This Express is for the coding test provided by [RF infinite Sdn Bhd]
 
-Requirements of the system:
+## Serve on local
 
-Models:
-- Movie
-    - title
-    - director
-    - description
-    - duration_min
-- Cast
-    - name
-    - rolename
-    - movie_id
-- User
-    - name
-    - email
-    - password
-- Wishlist (binding between Movie and User)
+```
+$ yarn install
+$ yarn run dev
+```
 
-Endpoints & Controllers:
+## Minimum Version used
 
-- CRUD Movies
-- Search Movies by all fields
-- Filter Movies by all fields
+- Node v14.6.0
+- npm v6.14.6
+- yarn v1.22.11
 
-- CRUD Cast
-- Search Cast by all fields
-- Filter Cast by all fields
+## MYSQL
 
-- CRUD User
-- Login as User (just return random api_token)
-- Search User by all fields
-- Filter User by all fields except password
+- Current MYSQL database is using personal remote SQL service.
+- It's pre-config under `.env`.
 
-- CRUD Wishlist
+## Postman
 
-Middleware: 
-
-- Allow all request as long as has header: 
-    - “Authorization: Bearer TOKEN”
-    
-*token can be any string
+Import from <a id="raw-url" href="https://raw.githubusercontent.com/rf-infinite/programmer-test-nodejs/main/pcari.postman_collection.json">Postman collection</a> 
